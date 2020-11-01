@@ -2,4 +2,19 @@
   <string name="app_name">Neumorphism Calculator</string>
   <string name="app_inapp_name">Calculator</string>
   <string name="calculator_display_mock">8888888888</string>
+  <string name="calculator_ac">AC</string>
+  <string name="calculator_plus_and_minus">+/-</string>
+  <string name="calculator_percent">%</string>
+  <string name="calculator_divide">÷</string>
+  <string name="calculator_multiply">X</string>
+  <string name="calculator_minus">-</string>
+  <string name="calculator_nine">9</string>
+  <string name="calculator_eight">8</string>
+  <string name="calculator_seven">7</string>
+  <string name="calculator_six">6</string>
+  <string name="calculator_five">5</string>
+  <string name="calculator_four">4</string>
+  <string name="calculator_three">3</string>
+  <string name="calculator_two">2</string>
+  <string name="calculator_one">1</string>
 </resources>
