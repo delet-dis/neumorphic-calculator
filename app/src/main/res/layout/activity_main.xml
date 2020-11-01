@@ -6,20 +6,6 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-  <soup.neumorphism.NeumorphButton
-          android:id="@+id/button"
-          style="@style/Widget.Neumorph.Button"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="36dp"
-          android:drawablePadding="8dp"
-          android:fontFamily="@font/museo"
-          android:text="Button"
-          android:textFontWeight="500"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent" />
-
   <TextView
           android:id="@+id/app_inapp_name"
           android:layout_width="wrap_content"
@@ -33,5 +19,42 @@
           android:textSize="28sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
+
+  <soup.neumorphism.NeumorphCardView
+          android:id="@+id/calculator_display"
+          style="@style/Widget.Neumorph.CardView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="21dp"
+          android:layout_marginTop="24dp"
+          android:layout_marginEnd="21dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/app_inapp_name"
+          app:neumorph_shapeType="pressed">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+      <TextView
+              android:id="@+id/calculator_display_mock"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginStart="24dp"
+              android:layout_marginTop="24dp"
+              android:layout_marginEnd="24dp"
+              android:layout_marginBottom="24dp"
+              android:fontFamily="@font/digitalnumbers"
+              android:text="@string/calculator_display_mock"
+              android:textSize="40sp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+  </soup.neumorphism.NeumorphCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

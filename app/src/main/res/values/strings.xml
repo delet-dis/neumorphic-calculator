@@ -1,4 +1,5 @@
 <resources>
   <string name="app_name">Neumorphism Calculator</string>
   <string name="app_inapp_name">Calculator</string>
+  <string name="calculator_display_mock">8888888888</string>
 </resources>
