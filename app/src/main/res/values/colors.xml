@@ -7,4 +7,5 @@
   <color name="textColorPrimary">#373A37</color>
   <color name="displayGradientStart">#CAD4C5</color>
   <color name="displayGradientEnd">#B2BFA5</color>
+  <color name="displayMockFontColor">#B2BEAA</color>
 </resources>
