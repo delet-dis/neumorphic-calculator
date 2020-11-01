@@ -8,4 +8,5 @@
   <color name="displayGradientStart">#CAD4C5</color>
   <color name="displayGradientEnd">#B2BFA5</color>
   <color name="displayMockFontColor">#B2BEAA</color>
+  <color name="displayNonMockFontColor">#373A37</color>
 </resources>
