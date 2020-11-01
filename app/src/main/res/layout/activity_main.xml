@@ -13,9 +13,25 @@
           android:layout_height="wrap_content"
           android:layout_marginBottom="36dp"
           android:drawablePadding="8dp"
+          android:fontFamily="@font/museo"
           android:text="Button"
+          android:textFontWeight="500"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent" />
+
+  <TextView
+          android:id="@+id/app_inapp_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="25dp"
+          android:layout_marginTop="25dp"
+          android:fontFamily="@font/museo"
+          android:text="@string/app_inapp_name"
+          android:textColor="@color/textColorPrimary"
+          android:textFontWeight="700"
+          android:textSize="28sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
