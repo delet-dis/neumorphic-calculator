@@ -111,6 +111,15 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        percent_button.setOnClickListener {
+            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+                calculator_display_non_mock.text = ""
+                operation = "PERCENT"
+            }
+
+        }
+
         plus_and_minus_button.setOnClickListener {
             if (calculator_display_non_mock.text.toString().isNotEmpty()) {
                 val1 =
@@ -157,6 +166,7 @@ class MainActivity : AppCompatActivity() {
             "MULTIPLY" -> val1 * val2
             "MINUS" -> val1 - val2
             "PLUS" -> val1 + val2
+            "PERCENT" -> val1 / 100 * val2
             else -> val1
         }
     }
