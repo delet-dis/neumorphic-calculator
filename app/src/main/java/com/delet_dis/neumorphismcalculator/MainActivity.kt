@@ -102,21 +102,23 @@ class MainActivity : AppCompatActivity() {
                     .replace(',', '.')
         }
 
-
     }
 
     private fun clearDisplay() {
         calculator_display_non_mock.text = ""
+        operation = ""
+        val1 = 0.0
+        val2 = 0.0
     }
 
 
     private fun calculateExpression(): Double {
-        when (operation) {
-            "DIVIDE" -> return val1 / val2
-            "MULTIPLY" -> return val1 * val2
-            "MINUS" -> return val1 - val2
-            "PLUS" -> return val1 + val2
-            else -> return 0.0
+        return when (operation) {
+            "DIVIDE" -> val1 / val2
+            "MULTIPLY" -> val1 * val2
+            "MINUS" -> val1 - val2
+            "PLUS" -> val1 + val2
+            else -> val1
         }
     }
 }
