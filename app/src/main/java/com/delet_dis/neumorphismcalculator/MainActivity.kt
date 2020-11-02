@@ -3,7 +3,6 @@ package com.delet_dis.neumorphismcalculator
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.NumberFormatException
 import kotlin.math.ceil
 import kotlin.math.floor
 
@@ -94,6 +93,11 @@ class MainActivity : AppCompatActivity() {
                 val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
                 calculator_display_non_mock.text = ""
                 operation = "MINUS"
+            } else if (calculator_display_non_mock.text.toString()
+                    .isEmpty() && calculator_display_non_mock.text.toString() != "-"
+            ) {
+                calculator_display_non_mock.text =
+                    calculator_display_non_mock.text.toString() + "-"
             }
 
         }
@@ -107,14 +111,32 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        plus_and_minus_button.setOnClickListener {
+            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                val1 =
+                    +calculator_display_non_mock.text.toString().replace(',', '.').toDouble() * -1
+                calculator_display_non_mock.text =
+                    if ((floor(val1) == ceil(val1)))
+                        val1
+                            .toString().replace(".0", "")
+                    else
+                        val1.toString()
+                            .replace('.', ',')
+            }
+
+        }
+
         equals_button.setOnClickListener {
             try {
                 val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
                 calculator_display_non_mock.text =
-                    if ((floor(calculateExpression()) == ceil(calculateExpression()))) calculateExpression()
-                        .toString().replace(".0", "") else calculateExpression().toString()
-                        .replace(',', '.')
-            }catch (e: NumberFormatException){
+                    if ((floor(calculateExpression()) == ceil(calculateExpression())))
+                        calculateExpression()
+                            .toString().replace(".0", "")
+                    else
+                        calculateExpression().toString()
+                            .replace('.', ',')
+            } catch (e: NumberFormatException) {
                 clearDisplay()
             }
         }
