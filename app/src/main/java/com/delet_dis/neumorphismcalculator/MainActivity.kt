@@ -74,28 +74,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         divide_button.setOnClickListener {
-            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-                calculator_display_non_mock.text = ""
-                operation = "DIVIDE"
-            }
+            onClickOperation("DIVIDE")
 
         }
 
         multiply_button.setOnClickListener {
-            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-                calculator_display_non_mock.text = ""
-                operation = "MULTIPLY"
-            }
+            onClickOperation("MULTIPLY")
 
         }
 
         minus_button.setOnClickListener {
             if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-                calculator_display_non_mock.text = ""
-                operation = "MINUS"
+                onClickOperation("MINUS")
             } else if (calculator_display_non_mock.text.toString()
                     .isEmpty() && calculator_display_non_mock.text.toString() != "-"
             ) {
@@ -106,20 +96,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         plus_button.setOnClickListener {
-            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+            if (operation == "") {
+                onClickOperation("PLUS")
+            } else {
+                val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+                val1 =
+                    if ((floor(calculateExpression()) == ceil(calculateExpression())))
+                        calculateExpression()
+                            .toString().replace(".0", "").toDouble()
+                    else
+                        calculateExpression().toString()
+                            .replace('.', ',').toDouble()
                 calculator_display_non_mock.text = ""
-                operation = "PLUS"
             }
-
         }
 
         percent_button.setOnClickListener {
-            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-                calculator_display_non_mock.text = ""
-                operation = "PERCENT"
-            }
+            onClickOperation("PERCENT")
 
         }
 
@@ -171,6 +164,14 @@ class MainActivity : AppCompatActivity() {
             "PLUS" -> val1 + val2
             "PERCENT" -> val1 / 100 * val2
             else -> val1
+        }
+    }
+
+    private fun onClickOperation(processingOperation: String) {
+        if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+            calculator_display_non_mock.text = ""
+            operation = processingOperation
         }
     }
 
