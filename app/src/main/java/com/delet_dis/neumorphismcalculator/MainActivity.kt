@@ -76,11 +76,30 @@ class MainActivity : AppCompatActivity() {
             operation = "DIVIDE"
         }
 
+        multiply_button.setOnClickListener {
+            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+            calculator_display_non_mock.text = ""
+            operation = "MULTIPLY"
+        }
+
+        minus_button.setOnClickListener {
+            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+            calculator_display_non_mock.text = ""
+            operation = "MINUS"
+        }
+
+        plus_button.setOnClickListener {
+            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+            calculator_display_non_mock.text = ""
+            operation = "PLUS"
+        }
+
         equals_button.setOnClickListener {
             val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
             calculator_display_non_mock.text =
                 if ((floor(calculateExpression()) == ceil(calculateExpression()))) calculateExpression()
-                    .toString().replace(".0","") else calculateExpression().toString().replace(',', '.')
+                    .toString().replace(".0", "") else calculateExpression().toString()
+                    .replace(',', '.')
         }
 
 
@@ -94,6 +113,9 @@ class MainActivity : AppCompatActivity() {
     private fun calculateExpression(): Double {
         when (operation) {
             "DIVIDE" -> return val1 / val2
+            "MULTIPLY" -> return val1 * val2
+            "MINUS" -> return val1 - val2
+            "PLUS" -> return val1 + val2
             else -> return 0.0
         }
     }
