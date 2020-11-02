@@ -71,7 +71,6 @@
           android:letterSpacing="0.15"
           android:maxLines="1"
           android:scaleY="1.3"
-          android:text="@string/calculator_display_mock"
           android:textColor="@color/displayNonMockFontColor"
           android:textFontWeight="500"
           android:textSize="51sp"
