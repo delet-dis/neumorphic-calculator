@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.ceil
 import kotlin.math.floor
+import kotlin.math.roundToLong
 
 var operation = ""
 var val1 = 0.0
@@ -152,11 +153,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateExpression(): Double {
         return when (operation) {
-            "DIVIDE" -> val1 / val2
-            "MULTIPLY" -> val1 * val2
-            "MINUS" -> val1 - val2
-            "PLUS" -> val1 + val2
-            "PERCENT" -> val1 / 100 * val2
+            "DIVIDE" -> (val1 / val2 * 100000000).roundToLong().toDouble() / 100000000
+            "MULTIPLY" -> (val1 * val2 * 100000000).roundToLong().toDouble() / 100000000
+            "MINUS" -> ((val1 - val2) * 100000000).roundToLong().toDouble() / 100000000
+            "PLUS" -> ((val1 + val2) * 100000000).roundToLong().toDouble() / 100000000
+            "PERCENT" -> (val1 / 100 * val2 * 100000000).roundToLong().toDouble() / 100000000
             else -> val1
         }
     }

@@ -92,6 +92,7 @@
           android:layout_marginBottom="24dp"
           android:fontFamily="@font/digitalnumbers"
           android:letterSpacing="0.1"
+          android:maxLength="10"
           android:maxLines="1"
           android:scaleY="1.3"
           android:textColor="@color/displayNonMockFontColor"
