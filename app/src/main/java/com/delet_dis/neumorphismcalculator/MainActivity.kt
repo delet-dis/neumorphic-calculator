@@ -3,12 +3,13 @@ package com.delet_dis.neumorphismcalculator
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.NumberFormatException
 import kotlin.math.ceil
 import kotlin.math.floor
 
-public var operation = "";
-public var val1 = 0.0;
-public var val2 = 0.0;
+var operation = "";
+var val1 = 0.0;
+var val2 = 0.0;
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,35 +72,51 @@ class MainActivity : AppCompatActivity() {
         }
 
         divide_button.setOnClickListener {
-            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-            calculator_display_non_mock.text = ""
-            operation = "DIVIDE"
+            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+                calculator_display_non_mock.text = ""
+                operation = "DIVIDE"
+            }
+
         }
 
         multiply_button.setOnClickListener {
-            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-            calculator_display_non_mock.text = ""
-            operation = "MULTIPLY"
+            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+                calculator_display_non_mock.text = ""
+                operation = "MULTIPLY"
+            }
+
         }
 
         minus_button.setOnClickListener {
-            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-            calculator_display_non_mock.text = ""
-            operation = "MINUS"
+            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+                calculator_display_non_mock.text = ""
+                operation = "MINUS"
+            }
+
         }
 
         plus_button.setOnClickListener {
-            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-            calculator_display_non_mock.text = ""
-            operation = "PLUS"
+            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+                calculator_display_non_mock.text = ""
+                operation = "PLUS"
+            }
+
         }
 
         equals_button.setOnClickListener {
-            val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-            calculator_display_non_mock.text =
-                if ((floor(calculateExpression()) == ceil(calculateExpression()))) calculateExpression()
-                    .toString().replace(".0", "") else calculateExpression().toString()
-                    .replace(',', '.')
+            try {
+                val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+                calculator_display_non_mock.text =
+                    if ((floor(calculateExpression()) == ceil(calculateExpression()))) calculateExpression()
+                        .toString().replace(".0", "") else calculateExpression().toString()
+                        .replace(',', '.')
+            }catch (e: NumberFormatException){
+                clearDisplay()
+            }
         }
 
     }
@@ -121,4 +138,5 @@ class MainActivity : AppCompatActivity() {
             else -> val1
         }
     }
+
 }
