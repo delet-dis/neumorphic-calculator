@@ -80,7 +80,6 @@ class MainActivity : AppCompatActivity() {
 
         multiply_button.setOnClickListener {
             onClickOperation("MULTIPLY")
-
         }
 
         minus_button.setOnClickListener {
@@ -96,19 +95,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         plus_button.setOnClickListener {
-            if (operation == "") {
-                onClickOperation("PLUS")
-            } else {
-                val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-                val1 =
-                    if ((floor(calculateExpression()) == ceil(calculateExpression())))
-                        calculateExpression()
-                            .toString().replace(".0", "").toDouble()
-                    else
-                        calculateExpression().toString()
-                            .replace('.', ',').toDouble()
-                calculator_display_non_mock.text = ""
-            }
+            onClickOperation("PLUS")
         }
 
         percent_button.setOnClickListener {
@@ -168,11 +155,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onClickOperation(processingOperation: String) {
-        if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-            val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+
+        if (operation == "") {
+            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+                calculator_display_non_mock.text = ""
+                operation = processingOperation
+            }
+        } else {
+            val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+            val1 =
+                if ((floor(calculateExpression()) == ceil(calculateExpression())))
+                    calculateExpression()
+                        .toString().replace(".0", "").toDouble()
+                else
+                    calculateExpression().toString()
+                        .replace('.', ',').toDouble()
             calculator_display_non_mock.text = ""
-            operation = processingOperation
         }
+
+
     }
 
 }
