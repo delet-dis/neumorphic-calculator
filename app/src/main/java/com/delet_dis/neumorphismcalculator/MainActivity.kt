@@ -66,8 +66,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         comma_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + ","
+            if (calculator_display_non_mock.text.toString()
+                    .lastIndexOf(",") != calculator_display_non_mock.text.toString().length - 1
+            )
+                calculator_display_non_mock.text =
+                    calculator_display_non_mock.text.toString() + ","
         }
 
         divide_button.setOnClickListener {
