@@ -6,9 +6,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.ceil
 import kotlin.math.floor
 
-var operation = "";
-var val1 = 0.0;
-var val2 = 0.0;
+var operation = ""
+var val1 = 0.0
+var val2 = 0.0
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
