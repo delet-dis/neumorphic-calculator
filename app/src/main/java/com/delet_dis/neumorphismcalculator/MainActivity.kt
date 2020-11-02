@@ -178,7 +178,7 @@ class MainActivity : AppCompatActivity() {
                         .toString().replace(".0", "").toDouble()
                 else
                     calculateExpression().toString()
-                        .replace('.', ',').toDouble()
+                        .replace(',', '.').toDouble()
             calculator_display_non_mock.text = ""
         }
 
