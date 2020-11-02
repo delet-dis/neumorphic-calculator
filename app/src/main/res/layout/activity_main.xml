@@ -132,7 +132,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/seven_button"
-      app:layout_constraintEnd_toStartOf="@+id/firstHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuidline"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/sixthLineGuidline" />
 
@@ -148,8 +148,8 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/eight_button"
-      app:layout_constraintEnd_toStartOf="@+id/secondHorizontalLineGuidline"
-      app:layout_constraintStart_toStartOf="@+id/firstHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/sixthLineGuidline" />
 
   <soup.neumorphism.NeumorphButton
@@ -164,7 +164,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/nine_button"
-      app:layout_constraintEnd_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintStart_toEndOf="@+id/plus_and_minus_button"
       app:layout_constraintTop_toTopOf="@+id/sixthLineGuidline" />
 
@@ -181,7 +181,7 @@
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/multiply_button"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/sixthLineGuidline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
@@ -204,7 +204,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/four_button"
-      app:layout_constraintEnd_toStartOf="@+id/firstHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuidline"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/fifthLineGuidline" />
 
@@ -220,8 +220,8 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/five_button"
-      app:layout_constraintEnd_toStartOf="@+id/secondHorizontalLineGuidline"
-      app:layout_constraintStart_toStartOf="@+id/firstHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/fifthLineGuidline" />
 
   <soup.neumorphism.NeumorphButton
@@ -236,7 +236,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/six_button"
-      app:layout_constraintEnd_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintStart_toEndOf="@+id/eight_button"
       app:layout_constraintTop_toTopOf="@+id/fifthLineGuidline" />
 
@@ -253,7 +253,7 @@
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/minus_button"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/fifthLineGuidline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
@@ -276,7 +276,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/one_button"
-      app:layout_constraintEnd_toStartOf="@+id/firstHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuidline"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/fourthLineGuidline" />
 
@@ -292,8 +292,8 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/two_button"
-      app:layout_constraintEnd_toStartOf="@+id/secondHorizontalLineGuidline"
-      app:layout_constraintStart_toStartOf="@+id/firstHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/fourthLineGuidline" />
 
   <soup.neumorphism.NeumorphButton
@@ -308,7 +308,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/three_button"
-      app:layout_constraintEnd_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintStart_toEndOf="@+id/five_button"
       app:layout_constraintTop_toTopOf="@+id/fourthLineGuidline" />
 
@@ -325,7 +325,7 @@
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/plus_button"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/fourthLineGuidline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
@@ -349,7 +349,7 @@
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/secondLineGuidline"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/thirdLineGuidline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
@@ -365,7 +365,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/secondLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/firstHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuidline"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/thirdLineGuidline" />
 
@@ -381,7 +381,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/secondLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintStart_toEndOf="@+id/two_button"
       app:layout_constraintTop_toTopOf="@+id/thirdLineGuidline" />
 
@@ -397,8 +397,8 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/secondLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/secondHorizontalLineGuidline"
-      app:layout_constraintStart_toStartOf="@+id/firstHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/thirdLineGuidline" />
 
   <androidx.constraintlayout.widget.Guideline
@@ -406,7 +406,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
-      app:layout_constraintGuide_percent="0.845" />
+      app:layout_constraintGuide_percent="0.851" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/zero_button"
@@ -420,7 +420,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/firstLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/secondHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@+id/secondLineGuidline" />
 
@@ -436,7 +436,7 @@
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/firstLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintStart_toEndOf="@+id/zero_button"
       app:layout_constraintTop_toTopOf="@+id/secondLineGuidline" />
 
@@ -453,7 +453,7 @@
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/firstLineGuidline"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdHorizontalLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
       app:layout_constraintTop_toTopOf="@+id/secondLineGuidline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
@@ -465,21 +465,21 @@
       app:layout_constraintGuide_percent="1" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/firstHorizontalLineGuidline"
+      android:id="@+id/firstVerticalLineGuidline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       app:layout_constraintGuide_percent="0.25304136" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/secondHorizontalLineGuidline"
+      android:id="@+id/secondVerticalLineGuidline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       app:layout_constraintGuide_percent="0.5" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/thirdHorizontalLineGuidline"
+      android:id="@+id/thirdVerticalLineGuidline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
