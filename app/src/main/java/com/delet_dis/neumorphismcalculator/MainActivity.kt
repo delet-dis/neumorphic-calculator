@@ -83,15 +83,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         minus_button.setOnClickListener {
-            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-                onClickOperation("MINUS")
-            } else if (calculator_display_non_mock.text.toString()
-                    .isEmpty() && calculator_display_non_mock.text.toString() != "-" &&
-                calculator_display_non_mock.text.toString().chars().filter { ch -> ch.toChar() == 'e' }.count()!=2.toLong()
-            ) {
-                calculator_display_non_mock.text =
-                    calculator_display_non_mock.text.toString() + "-"
+            try {
+                if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                    onClickOperation("MINUS")
+                } else if (calculator_display_non_mock.text.toString()
+                        .isEmpty() && calculator_display_non_mock.text.toString() != "-" &&
+                    calculator_display_non_mock.text.toString().chars()
+                        .filter { ch -> ch.toChar() == 'e' }.count() != 2.toLong()
+                ) {
+                    calculator_display_non_mock.text =
+                        calculator_display_non_mock.text.toString() + "-"
+                }
+            } catch (e: java.lang.NumberFormatException) {
+                clearDisplay()
             }
+
 
         }
 
