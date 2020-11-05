@@ -2,6 +2,7 @@
   <string name="app_name">Neumorphism Calculator</string>
   <string name="app_inapp_name">Calculator</string>
   <string name="calculator_display_mock">8888888888</string>
+  <string name="calculator_display_mock_commas">,,,,,,,,,,</string>
   <string name="calculator_ac">AC</string>
   <string name="calculator_plus_and_minus">+/-</string>
   <string name="calculator_percent">%</string>
