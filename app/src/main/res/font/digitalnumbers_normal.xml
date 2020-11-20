@@ -1,11 +1,11 @@
 <font-family xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <font android:font="@font/museo"
+    <font android:font="@font/digitalnumbers"
         android:fontStyle="normal"
-        android:fontWeight="700"
-        app:font="@font/museo"
+        android:fontWeight="500"
+        app:font="@font/digitalnumbers"
         app:fontStyle="normal"
-        app:fontWeight="700" />
+        app:fontWeight="500" />
 
 </font-family>
