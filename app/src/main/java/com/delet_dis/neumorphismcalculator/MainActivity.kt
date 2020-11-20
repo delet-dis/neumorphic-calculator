@@ -7,11 +7,13 @@ import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.roundToLong
 
-var operation = ""
-var val1 = 0.0
-var val2 = 0.0
 
 class MainActivity : AppCompatActivity() {
+
+    private var operation = ""
+    private var val1 = 0.0
+    private var val2 = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

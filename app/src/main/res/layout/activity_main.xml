@@ -7,14 +7,14 @@
     tools:context=".MainActivity">
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/leftGuidline"
+      android:id="@+id/leftGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       app:layout_constraintGuide_percent="0.02" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/rightGuidline"
+      android:id="@+id/rightGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
@@ -26,16 +26,15 @@
       android:layout_height="wrap_content"
       android:layout_marginStart="25dp"
       android:layout_marginTop="25dp"
-      android:fontFamily="@font/museo"
-      android:text="@string/app_inapp_name"
+      android:fontFamily="@font/museo_bold"
+      android:text="@string/appInnappName"
       android:textColor="@color/textColorPrimary"
-      android:textFontWeight="700"
       android:textSize="28sp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/aboveDisplayGuidline"
+      android:id="@+id/aboveDisplayGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -47,10 +46,10 @@
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:padding="5dp"
-      app:layout_constraintBottom_toTopOf="@+id/underDisplayGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/rightGuidline"
-      app:layout_constraintStart_toStartOf="@+id/leftGuidline"
-      app:layout_constraintTop_toTopOf="@+id/aboveDisplayGuidline"
+      app:layout_constraintBottom_toTopOf="@+id/underDisplayGuideline"
+      app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+      app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+      app:layout_constraintTop_toTopOf="@+id/aboveDisplayGuideline"
       app:neumorph_shadowElevation="-20dp"
       app:neumorph_shapeAppearance="@style/CustomDisplayAngleAppearance"
       app:neumorph_shapeType="pressed">
@@ -73,7 +72,7 @@
           android:letterSpacing="0.1"
           android:maxLines="1"
           android:scaleY="1.3"
-          android:text="@string/calculator_display_mock"
+          android:text="@string/calculatorDisplayMock"
           android:textColor="@color/displayMockFontColor"
           android:textFontWeight="500"
           android:textSize="60sp"
@@ -94,7 +93,7 @@
           android:letterSpacing="0.1"
           android:maxLines="1"
           android:scaleY="1.3"
-          android:text="@string/calculator_display_mock_commas"
+          android:text="@string/calculatorDisplayMockCommas"
           android:textColor="@color/displayMockFontColor"
           android:textFontWeight="500"
           android:textSize="60sp"
@@ -129,14 +128,14 @@
   </soup.neumorphism.NeumorphCardView>
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/underDisplayGuidline"
+      android:id="@+id/underDisplayGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
       app:layout_constraintGuide_percent="0.25" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/sixthLineGuidline"
+      android:id="@+id/sixthLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -150,13 +149,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_ac"
+      android:text="@string/calculatorAc"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/seven_button"
-      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuideline"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/sixthLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/sixthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/plus_and_minus_button"
@@ -166,13 +165,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_plus_and_minus"
+      android:text="@string/calculatorPlusAndMinus"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/eight_button"
-      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
-      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/sixthLineGuidline" />
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuideline"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/sixthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/percent_button"
@@ -182,13 +181,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_percent"
+      android:text="@string/calculatorPercent"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/nine_button"
-      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuideline"
       app:layout_constraintStart_toEndOf="@+id/plus_and_minus_button"
-      app:layout_constraintTop_toTopOf="@+id/sixthLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/sixthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/divide_button"
@@ -198,17 +197,17 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_divide"
+      android:text="@string/calculatorDivide"
       android:textColor="@color/colorPrimary"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/multiply_button"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/sixthLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/sixthLineGuideline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/fifthLineGuidline"
+      android:id="@+id/fifthLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -222,13 +221,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_seven"
+      android:text="@string/calculatorSeven"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/four_button"
-      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuideline"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/fifthLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/fifthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/eight_button"
@@ -238,13 +237,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_eight"
+      android:text="@string/calculatorEight"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/five_button"
-      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
-      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/fifthLineGuidline" />
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuideline"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/fifthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/nine_button"
@@ -254,13 +253,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_nine"
+      android:text="@string/calculatorNine"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/six_button"
-      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuideline"
       app:layout_constraintStart_toEndOf="@+id/eight_button"
-      app:layout_constraintTop_toTopOf="@+id/fifthLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/fifthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/multiply_button"
@@ -270,17 +269,17 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_multiply"
+      android:text="@string/calculatorMultiply"
       android:textColor="@color/colorPrimary"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/minus_button"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/fifthLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/fifthLineGuideline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/fourthLineGuidline"
+      android:id="@+id/fourthLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -294,13 +293,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_four"
+      android:text="@string/calculatorFour"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/one_button"
-      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuideline"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/fourthLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/fourthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/five_button"
@@ -310,13 +309,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_five"
+      android:text="@string/calculatorFive"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/two_button"
-      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
-      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/fourthLineGuidline" />
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuideline"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/fourthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/six_button"
@@ -326,13 +325,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_six"
+      android:text="@string/calculatorSix"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/three_button"
-      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuideline"
       app:layout_constraintStart_toEndOf="@+id/five_button"
-      app:layout_constraintTop_toTopOf="@+id/fourthLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/fourthLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/minus_button"
@@ -342,17 +341,17 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_minus"
+      android:text="@string/calculatorMinus"
       android:textColor="@color/colorPrimary"
       android:textSize="35sp"
       app:layout_constraintBottom_toTopOf="@+id/plus_button"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/fourthLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/fourthLineGuideline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/thirdLineGuidline"
+      android:id="@+id/thirdLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -366,13 +365,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_plus"
+      android:text="@string/calculatorPlus"
       android:textColor="@color/colorPrimary"
       android:textSize="35sp"
-      app:layout_constraintBottom_toTopOf="@+id/secondLineGuidline"
+      app:layout_constraintBottom_toTopOf="@+id/secondLineGuideline"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/thirdLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/thirdLineGuideline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
   <soup.neumorphism.NeumorphButton
@@ -383,13 +382,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_one"
+      android:text="@string/calculatorOne"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
-      app:layout_constraintBottom_toTopOf="@+id/secondLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuidline"
+      app:layout_constraintBottom_toTopOf="@+id/secondLineGuideline"
+      app:layout_constraintEnd_toStartOf="@+id/firstVerticalLineGuideline"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/thirdLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/thirdLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/three_button"
@@ -399,13 +398,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_three"
+      android:text="@string/calculatorThree"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
-      app:layout_constraintBottom_toTopOf="@+id/secondLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
+      app:layout_constraintBottom_toTopOf="@+id/secondLineGuideline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuideline"
       app:layout_constraintStart_toEndOf="@+id/two_button"
-      app:layout_constraintTop_toTopOf="@+id/thirdLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/thirdLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/two_button"
@@ -415,16 +414,16 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_two"
+      android:text="@string/calculatorTwo"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
-      app:layout_constraintBottom_toTopOf="@+id/secondLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
-      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/thirdLineGuidline" />
+      app:layout_constraintBottom_toTopOf="@+id/secondLineGuideline"
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuideline"
+      app:layout_constraintStart_toStartOf="@+id/firstVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/thirdLineGuideline" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/secondLineGuidline"
+      android:id="@+id/secondLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -438,13 +437,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_zero"
+      android:text="@string/calculatorZero"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
-      app:layout_constraintBottom_toTopOf="@+id/firstLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuidline"
+      app:layout_constraintBottom_toTopOf="@+id/firstLineGuideline"
+      app:layout_constraintEnd_toStartOf="@+id/secondVerticalLineGuideline"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/secondLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/secondLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/comma_button"
@@ -454,13 +453,13 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_comma"
+      android:text="@string/calculatorComma"
       android:textColor="@color/colorAccent"
       android:textSize="35sp"
-      app:layout_constraintBottom_toTopOf="@+id/firstLineGuidline"
-      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuidline"
+      app:layout_constraintBottom_toTopOf="@+id/firstLineGuideline"
+      app:layout_constraintEnd_toStartOf="@+id/thirdVerticalLineGuideline"
       app:layout_constraintStart_toEndOf="@+id/zero_button"
-      app:layout_constraintTop_toTopOf="@+id/secondLineGuidline" />
+      app:layout_constraintTop_toTopOf="@+id/secondLineGuideline" />
 
   <soup.neumorphism.NeumorphButton
       android:id="@+id/equals_button"
@@ -470,38 +469,38 @@
       android:drawablePadding="8dp"
       android:fontFamily="@font/montserrat"
       android:padding="12dp"
-      android:text="@string/calculator_equals"
+      android:text="@string/calculatorEquals"
       android:textColor="@color/colorPrimary"
       android:textSize="35sp"
-      app:layout_constraintBottom_toTopOf="@+id/firstLineGuidline"
+      app:layout_constraintBottom_toTopOf="@+id/firstLineGuideline"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuidline"
-      app:layout_constraintTop_toTopOf="@+id/secondLineGuidline"
+      app:layout_constraintStart_toStartOf="@+id/thirdVerticalLineGuideline"
+      app:layout_constraintTop_toTopOf="@+id/secondLineGuideline"
       app:neumorph_backgroundColor="@color/colorAccent" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/firstLineGuidline"
+      android:id="@+id/firstLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
       app:layout_constraintGuide_percent="1" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/firstVerticalLineGuidline"
+      android:id="@+id/firstVerticalLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       app:layout_constraintGuide_percent="0.25304136" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/secondVerticalLineGuidline"
+      android:id="@+id/secondVerticalLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
       app:layout_constraintGuide_percent="0.5" />
 
   <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/thirdVerticalLineGuidline"
+      android:id="@+id/thirdVerticalLineGuideline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
