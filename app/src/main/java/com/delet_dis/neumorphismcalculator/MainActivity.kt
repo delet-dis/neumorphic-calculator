@@ -9,6 +9,14 @@ import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.roundToLong
 
+enum class Operation {
+    DIVIDE,
+    MULTIPLY,
+    PERCENT,
+    MINUS,
+    PLUS
+}
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,13 +29,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val group = groupOfNumbers
-        val refIds: IntArray = group.referencedIds
+        val refIds = group.referencedIds
         for (id in refIds) {
             findViewById<View>(id).setOnClickListener {
                 calculator_display_non_mock.text =
                     calculator_display_non_mock.text.toString() + (it as? Button)?.text.toString()
             }
         }
+
+
 
         clearDisplay()
 
@@ -46,18 +56,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         divide_button.setOnClickListener {
-            onClickOperation("DIVIDE")
-
+            if (isAvailableToOperate()) {
+                onClickOperation(Operation.DIVIDE.toString())
+            }
         }
 
         multiply_button.setOnClickListener {
-            onClickOperation("MULTIPLY")
+            if (isAvailableToOperate()) {
+                onClickOperation(Operation.MULTIPLY.toString())
+            }
         }
 
         minus_button.setOnClickListener {
             try {
                 if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-                    onClickOperation("MINUS")
+                    onClickOperation(Operation.MINUS.toString())
                 } else if (calculator_display_non_mock.text.toString()
                         .isEmpty() && calculator_display_non_mock.text.toString() != "-" &&
                     calculator_display_non_mock.text.toString().chars()
@@ -74,16 +87,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         plus_button.setOnClickListener {
-            onClickOperation("PLUS")
+            if (isAvailableToOperate()) {
+                onClickOperation(Operation.PLUS.toString())
+            }
         }
 
         percent_button.setOnClickListener {
-            onClickOperation("PERCENT")
+            if (isAvailableToOperate()) {
+                onClickOperation(Operation.PERCENT.toString())
+            }
 
         }
 
         plus_and_minus_button.setOnClickListener {
-            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+            if (isAvailableToOperate()) {
                 val1 =
                     +calculator_display_non_mock.text.toString().replace(',', '.').toDouble() * -1
                 calculator_display_non_mock.text =
@@ -94,7 +111,6 @@ class MainActivity : AppCompatActivity() {
                         val1.toString()
                             .replace('.', ',')
             }
-
         }
 
         equals_button.setOnClickListener {
@@ -131,6 +147,11 @@ class MainActivity : AppCompatActivity() {
             "PERCENT" -> (val1 / 100 * val2 * 100000000).roundToLong().toDouble() / 100000000
             else -> val1
         }
+    }
+
+    private fun isAvailableToOperate(): Boolean {
+        return calculator_display_non_mock.text.toString()
+            .isNotEmpty() && calculator_display_non_mock.text.toString() != "-"
     }
 
     private fun onClickOperation(processingOperation: String) {
