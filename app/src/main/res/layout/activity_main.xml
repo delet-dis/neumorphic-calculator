@@ -210,6 +210,14 @@
       android:orientation="horizontal"
       app:layout_constraintGuide_percent="0.414" />
 
+  <androidx.constraintlayout.widget.Group
+      android:id="@+id/groupOfNumbers"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:constraint_referenced_ids="one_button,five_button,six_button,three_button,nine_button,four_button,seven_button,two_button,eight_button"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
   <soup.neumorphism.NeumorphButton
       android:id="@+id/seven_button"
       style="@style/Widget.Neumorph.Button"

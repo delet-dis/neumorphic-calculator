@@ -1,6 +1,8 @@
 package com.delet_dis.neumorphismcalculator
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.ceil
@@ -18,55 +20,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        clearDisplay()
+        val group = groupOfNumbers
+        val refIds: IntArray = group.referencedIds
+        for (id in refIds) {
+            findViewById<View>(id).setOnClickListener {
+                calculator_display_non_mock.text =
+                    calculator_display_non_mock.text.toString() + (it as? Button)?.text.toString()
+            }
+        }
 
+        clearDisplay()
 
 
         ac_button.setOnClickListener {
             clearDisplay()
         }
 
-        zero_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "0"
-        }
-
-        one_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "1"
-        }
-        two_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "2"
-        }
-        three_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "3"
-        }
-        four_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "4"
-        }
-        five_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "5"
-        }
-        six_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "6"
-        }
-        seven_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "7"
-        }
-        eight_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "8"
-        }
-        nine_button.setOnClickListener {
-            calculator_display_non_mock.text =
-                calculator_display_non_mock.text.toString() + "9"
-        }
 
         comma_button.setOnClickListener {
             if (calculator_display_non_mock.text.toString()
