@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         val refIds = group.referencedIds
         for (id in refIds) {
             findViewById<View>(id).setOnClickListener {
-                calculator_display_non_mock.text =
-                    calculator_display_non_mock.text.toString() + (it as? Button)?.text.toString()
+                calculatorDisplayNonMock.text =
+                    calculatorDisplayNonMock.text.toString() + (it as? Button)?.text.toString()
             }
         }
 
@@ -42,42 +42,42 @@ class MainActivity : AppCompatActivity() {
         clearDisplay()
 
 
-        ac_button.setOnClickListener {
+        acButton.setOnClickListener {
             clearDisplay()
         }
 
 
-        comma_button.setOnClickListener {
-            if (calculator_display_non_mock.text.toString()
-                    .lastIndexOf(",") != calculator_display_non_mock.text.toString().length - 1
+        commaButton.setOnClickListener {
+            if (calculatorDisplayNonMock.text.toString()
+                    .lastIndexOf(",") != calculatorDisplayNonMock.text.toString().length - 1
             )
-                calculator_display_non_mock.text =
-                    calculator_display_non_mock.text.toString() + ","
+                calculatorDisplayNonMock.text =
+                    calculatorDisplayNonMock.text.toString() + ","
         }
 
-        divide_button.setOnClickListener {
+        divideButton.setOnClickListener {
             if (isAvailableToOperate()) {
                 onClickOperation(Operation.DIVIDE.toString())
             }
         }
 
-        multiply_button.setOnClickListener {
+        multiplyButton.setOnClickListener {
             if (isAvailableToOperate()) {
                 onClickOperation(Operation.MULTIPLY.toString())
             }
         }
 
-        minus_button.setOnClickListener {
+        minusButton.setOnClickListener {
             try {
-                if (calculator_display_non_mock.text.toString().isNotEmpty()) {
+                if (calculatorDisplayNonMock.text.toString().isNotEmpty()) {
                     onClickOperation(Operation.MINUS.toString())
-                } else if (calculator_display_non_mock.text.toString()
-                        .isEmpty() && calculator_display_non_mock.text.toString() != "-" &&
-                    calculator_display_non_mock.text.toString().chars()
+                } else if (calculatorDisplayNonMock.text.toString()
+                        .isEmpty() && calculatorDisplayNonMock.text.toString() != "-" &&
+                    calculatorDisplayNonMock.text.toString().chars()
                         .filter { ch -> ch.toChar() == 'e' }.count() != 2.toLong()
                 ) {
-                    calculator_display_non_mock.text =
-                        calculator_display_non_mock.text.toString() + "-"
+                    calculatorDisplayNonMock.text =
+                        calculatorDisplayNonMock.text.toString() + "-"
                 }
             } catch (e: java.lang.NumberFormatException) {
                 clearDisplay()
@@ -86,24 +86,24 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        plus_button.setOnClickListener {
+        plusButton.setOnClickListener {
             if (isAvailableToOperate()) {
                 onClickOperation(Operation.PLUS.toString())
             }
         }
 
-        percent_button.setOnClickListener {
+        percentButton.setOnClickListener {
             if (isAvailableToOperate()) {
                 onClickOperation(Operation.PERCENT.toString())
             }
 
         }
 
-        plus_and_minus_button.setOnClickListener {
+        plusAndMinusButton.setOnClickListener {
             if (isAvailableToOperate()) {
                 val1 =
-                    +calculator_display_non_mock.text.toString().replace(',', '.').toDouble() * -1
-                calculator_display_non_mock.text =
+                    +calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble() * -1
+                calculatorDisplayNonMock.text =
                     if ((floor(val1) == ceil(val1)))
                         val1
                             .toString().replace(".0", "")
@@ -113,10 +113,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        equals_button.setOnClickListener {
+        equalsButton.setOnClickListener {
             try {
-                val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-                calculator_display_non_mock.text =
+                val2 = calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
+                calculatorDisplayNonMock.text =
                     if ((floor(calculateExpression()) == ceil(calculateExpression())))
                         calculateExpression()
                             .toString().replace(".0", "")
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun clearDisplay() {
-        calculator_display_non_mock.text = ""
+        calculatorDisplayNonMock.text = ""
         operation = ""
         val1 = 0.0
         val2 = 0.0
@@ -150,20 +150,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isAvailableToOperate(): Boolean {
-        return calculator_display_non_mock.text.toString()
-            .isNotEmpty() && calculator_display_non_mock.text.toString() != "-"
+        return calculatorDisplayNonMock.text.toString()
+            .isNotEmpty() && calculatorDisplayNonMock.text.toString() != "-"
     }
 
     private fun onClickOperation(processingOperation: String) {
 
         if (operation == "") {
-            if (calculator_display_non_mock.text.toString().isNotEmpty()) {
-                val1 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
-                calculator_display_non_mock.text = ""
+            if (calculatorDisplayNonMock.text.toString().isNotEmpty()) {
+                val1 = calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
+                calculatorDisplayNonMock.text = ""
                 operation = processingOperation
             }
         } else {
-            val2 = calculator_display_non_mock.text.toString().replace(',', '.').toDouble()
+            val2 = calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
             val1 =
                 if ((floor(calculateExpression()) == ceil(calculateExpression())))
                     calculateExpression()
@@ -171,7 +171,7 @@ class MainActivity : AppCompatActivity() {
                 else
                     calculateExpression().toString()
                         .replace(',', '.').toDouble()
-            calculator_display_non_mock.text = ""
+            calculatorDisplayNonMock.text = ""
         }
 
 
