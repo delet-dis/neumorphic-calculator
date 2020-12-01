@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
         clearDisplay()
 
 
@@ -114,20 +113,25 @@ class MainActivity : AppCompatActivity() {
         }
 
         equalsButton.setOnClickListener {
-            try {
-                val2 = calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
-                calculatorDisplayNonMock.text =
-                    if ((floor(calculateExpression()) == ceil(calculateExpression())))
-                        calculateExpression()
-                            .toString().replace(".0", "")
-                    else
-                        calculateExpression().toString()
-                            .replace('.', ',')
-            } catch (e: NumberFormatException) {
-                clearDisplay()
-            }
+            equalsButtonOnclick()
         }
 
+    }
+
+    private fun equalsButtonOnclick() {
+        try {
+            val2 = calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
+            calculatorDisplayNonMock.text =
+                if ((floor(calculateExpression()) == ceil(calculateExpression())))
+                    calculateExpression()
+                        .toString().replace(".0", "")
+                else
+                    calculateExpression().toString()
+                        .replace('.', ',')
+            operation = ""
+        } catch (e: NumberFormatException) {
+            clearDisplay()
+        }
     }
 
     private fun clearDisplay() {
@@ -162,19 +166,6 @@ class MainActivity : AppCompatActivity() {
                 calculatorDisplayNonMock.text = ""
                 operation = processingOperation
             }
-        } else {
-            val2 = calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
-            val1 =
-                if ((floor(calculateExpression()) == ceil(calculateExpression())))
-                    calculateExpression()
-                        .toString().replace(".0", "").toDouble()
-                else
-                    calculateExpression().toString()
-                        .replace(',', '.').toDouble()
-            calculatorDisplayNonMock.text = ""
         }
-
-
     }
-
 }
