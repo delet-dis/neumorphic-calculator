@@ -9,31 +9,89 @@ import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.roundToLong
 
-enum class Operation {
-    DIVIDE,
-    MULTIPLY,
-    PERCENT,
-    MINUS,
-    PLUS
-}
-
 
 class MainActivity : AppCompatActivity() {
 
     private var operation = ""
-    private var val1 = 0.0
-    private var val2 = 0.0
+    private var firstProcessingNumber = 0.0
+    private var secondProcessingNumber = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initListeners()
+
+    }
+
+    private fun equalsButtonOnclick() {
+        try {
+            secondProcessingNumber =
+                calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
+            calculatorDisplayNonMock.text =
+                if ((floor(calculateExpression()) == ceil(calculateExpression())))
+                    calculateExpression()
+                        .toString().replace(".0", "")
+                else
+                    calculateExpression().toString()
+                        .replace('.', ',')
+            operation = ""
+        } catch (e: NumberFormatException) {
+            clearDisplay()
+        }
+    }
+
+    private fun clearDisplay() {
+        calculatorDisplayNonMock.text = ""
+        operation = ""
+        firstProcessingNumber = 0.0
+        secondProcessingNumber = 0.0
+    }
+
+
+    private fun calculateExpression(): Double {
+        return when (operation) {
+            "DIVIDE" -> (firstProcessingNumber / secondProcessingNumber * 100000000).roundToLong()
+                .toDouble() / 100000000
+            "MULTIPLY" -> (firstProcessingNumber * secondProcessingNumber * 100000000).roundToLong()
+                .toDouble() / 100000000
+            "MINUS" -> ((firstProcessingNumber - secondProcessingNumber) * 100000000).roundToLong()
+                .toDouble() / 100000000
+            "PLUS" -> ((firstProcessingNumber + secondProcessingNumber) * 100000000).roundToLong()
+                .toDouble() / 100000000
+            "PERCENT" -> (firstProcessingNumber / 100 * secondProcessingNumber * 100000000).roundToLong()
+                .toDouble() / 100000000
+            else -> firstProcessingNumber
+        }
+    }
+
+    private fun isAvailableToOperate(operation: Operation) {
+        if (calculatorDisplayNonMock.text.toString()
+                .isNotEmpty() && calculatorDisplayNonMock.text.toString() != "-"
+        ) {
+            onClickOperation(operation)
+        }
+    }
+
+    private fun onClickOperation(processingOperation: Operation) {
+
+        if (operation == "") {
+            if (calculatorDisplayNonMock.text.toString().isNotEmpty()) {
+                firstProcessingNumber =
+                    calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
+                calculatorDisplayNonMock.text = ""
+                operation = processingOperation.toString()
+            }
+        }
+    }
+
+    private fun initListeners() {
         val group = groupOfNumbers
         val refIds = group.referencedIds
         for (id in refIds) {
             findViewById<View>(id).setOnClickListener {
                 calculatorDisplayNonMock.text =
-                    calculatorDisplayNonMock.text.toString() + (it as? Button)?.text.toString()
+                    "${calculatorDisplayNonMock.text.toString()}${(it as? Button)?.text.toString()}"
             }
         }
 
@@ -51,32 +109,27 @@ class MainActivity : AppCompatActivity() {
                     .lastIndexOf(",") != calculatorDisplayNonMock.text.toString().length - 1
             )
                 calculatorDisplayNonMock.text =
-                    calculatorDisplayNonMock.text.toString() + ","
+                    "${calculatorDisplayNonMock.text.toString()},"
         }
 
         divideButton.setOnClickListener {
-            if (isAvailableToOperate()) {
-                onClickOperation(Operation.DIVIDE.toString())
-            }
+            isAvailableToOperate(Operation.DIVIDE)
         }
 
         multiplyButton.setOnClickListener {
-            if (isAvailableToOperate()) {
-                onClickOperation(Operation.MULTIPLY.toString())
-            }
+            isAvailableToOperate(Operation.MULTIPLY)
+
         }
 
         minusButton.setOnClickListener {
+            val displayAsString = calculatorDisplayNonMock.text.toString()
             try {
-                if (calculatorDisplayNonMock.text.toString().isNotEmpty()) {
-                    onClickOperation(Operation.MINUS.toString())
-                } else if (calculatorDisplayNonMock.text.toString()
-                        .isEmpty() && calculatorDisplayNonMock.text.toString() != "-" &&
-                    calculatorDisplayNonMock.text.toString().chars()
-                        .filter { ch -> ch.toChar() == 'e' }.count() != 2.toLong()
+                if (displayAsString.isNotEmpty()) {
+                    onClickOperation(Operation.MINUS)
+                } else if (displayAsString.isEmpty() && displayAsString != "-"
                 ) {
                     calculatorDisplayNonMock.text =
-                        calculatorDisplayNonMock.text.toString() + "-"
+                        "${calculatorDisplayNonMock.text.toString()}-"
                 }
             } catch (e: java.lang.NumberFormatException) {
                 clearDisplay()
@@ -86,86 +139,33 @@ class MainActivity : AppCompatActivity() {
         }
 
         plusButton.setOnClickListener {
-            if (isAvailableToOperate()) {
-                onClickOperation(Operation.PLUS.toString())
-            }
+            isAvailableToOperate(Operation.PLUS)
+
         }
 
         percentButton.setOnClickListener {
-            if (isAvailableToOperate()) {
-                onClickOperation(Operation.PERCENT.toString())
-            }
+            isAvailableToOperate(Operation.PERCENT)
 
         }
 
         plusAndMinusButton.setOnClickListener {
-            if (isAvailableToOperate()) {
-                val1 =
+            if (calculatorDisplayNonMock.text.toString()
+                    .isNotEmpty() && calculatorDisplayNonMock.text.toString() != "-"
+            ) {
+                firstProcessingNumber =
                     +calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble() * -1
                 calculatorDisplayNonMock.text =
-                    if ((floor(val1) == ceil(val1)))
-                        val1
+                    if ((floor(firstProcessingNumber) == ceil(firstProcessingNumber)))
+                        firstProcessingNumber
                             .toString().replace(".0", "")
                     else
-                        val1.toString()
+                        firstProcessingNumber.toString()
                             .replace('.', ',')
             }
         }
 
         equalsButton.setOnClickListener {
             equalsButtonOnclick()
-        }
-
-    }
-
-    private fun equalsButtonOnclick() {
-        try {
-            val2 = calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
-            calculatorDisplayNonMock.text =
-                if ((floor(calculateExpression()) == ceil(calculateExpression())))
-                    calculateExpression()
-                        .toString().replace(".0", "")
-                else
-                    calculateExpression().toString()
-                        .replace('.', ',')
-            operation = ""
-        } catch (e: NumberFormatException) {
-            clearDisplay()
-        }
-    }
-
-    private fun clearDisplay() {
-        calculatorDisplayNonMock.text = ""
-        operation = ""
-        val1 = 0.0
-        val2 = 0.0
-    }
-
-
-    private fun calculateExpression(): Double {
-        return when (operation) {
-            "DIVIDE" -> (val1 / val2 * 100000000).roundToLong().toDouble() / 100000000
-            "MULTIPLY" -> (val1 * val2 * 100000000).roundToLong().toDouble() / 100000000
-            "MINUS" -> ((val1 - val2) * 100000000).roundToLong().toDouble() / 100000000
-            "PLUS" -> ((val1 + val2) * 100000000).roundToLong().toDouble() / 100000000
-            "PERCENT" -> (val1 / 100 * val2 * 100000000).roundToLong().toDouble() / 100000000
-            else -> val1
-        }
-    }
-
-    private fun isAvailableToOperate(): Boolean {
-        return calculatorDisplayNonMock.text.toString()
-            .isNotEmpty() && calculatorDisplayNonMock.text.toString() != "-"
-    }
-
-    private fun onClickOperation(processingOperation: String) {
-
-        if (operation == "") {
-            if (calculatorDisplayNonMock.text.toString().isNotEmpty()) {
-                val1 = calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
-                calculatorDisplayNonMock.text = ""
-                operation = processingOperation
-            }
         }
     }
 }
