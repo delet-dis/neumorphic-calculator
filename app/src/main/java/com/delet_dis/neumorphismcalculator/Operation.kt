@@ -5,5 +5,6 @@ enum class Operation {
     MULTIPLY,
     PERCENT,
     MINUS,
-    PLUS
+    PLUS,
+    EMPTY
 }

@@ -12,7 +12,7 @@ import kotlin.math.roundToLong
 
 class MainActivity : AppCompatActivity() {
 
-    private var operation = ""
+    private var operation: Operation = Operation.EMPTY
     private var firstProcessingNumber = 0.0
     private var secondProcessingNumber = 0.0
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 else
                     calculateExpression().toString()
                         .replace('.', ',')
-            operation = ""
+            operation = Operation.EMPTY
         } catch (e: NumberFormatException) {
             clearDisplay()
         }
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun clearDisplay() {
         calculatorDisplayNonMock.text = ""
-        operation = ""
+        operation = Operation.EMPTY
         firstProcessingNumber = 0.0
         secondProcessingNumber = 0.0
     }
@@ -51,15 +51,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateExpression(): Double {
         return when (operation) {
-            "DIVIDE" -> (firstProcessingNumber / secondProcessingNumber * 100000000).roundToLong()
+            Operation.DIVIDE -> (firstProcessingNumber / secondProcessingNumber * 100000000).roundToLong()
                 .toDouble() / 100000000
-            "MULTIPLY" -> (firstProcessingNumber * secondProcessingNumber * 100000000).roundToLong()
+            Operation.MULTIPLY -> (firstProcessingNumber * secondProcessingNumber * 100000000).roundToLong()
                 .toDouble() / 100000000
-            "MINUS" -> ((firstProcessingNumber - secondProcessingNumber) * 100000000).roundToLong()
+            Operation.MINUS -> ((firstProcessingNumber - secondProcessingNumber) * 100000000).roundToLong()
                 .toDouble() / 100000000
-            "PLUS" -> ((firstProcessingNumber + secondProcessingNumber) * 100000000).roundToLong()
+            Operation.PLUS -> ((firstProcessingNumber + secondProcessingNumber) * 100000000).roundToLong()
                 .toDouble() / 100000000
-            "PERCENT" -> (firstProcessingNumber / 100 * secondProcessingNumber * 100000000).roundToLong()
+            Operation.PERCENT -> (firstProcessingNumber / 100 * secondProcessingNumber * 100000000).roundToLong()
                 .toDouble() / 100000000
             else -> firstProcessingNumber
         }
@@ -75,12 +75,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun onClickOperation(processingOperation: Operation) {
 
-        if (operation == "") {
+        if (operation == Operation.EMPTY) {
             if (calculatorDisplayNonMock.text.toString().isNotEmpty()) {
                 firstProcessingNumber =
                     calculatorDisplayNonMock.text.toString().replace(',', '.').toDouble()
                 calculatorDisplayNonMock.text = ""
-                operation = processingOperation.toString()
+                operation = processingOperation
             }
         }
     }
