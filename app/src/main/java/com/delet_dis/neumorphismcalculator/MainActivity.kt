@@ -1,5 +1,6 @@
 package com.delet_dis.neumorphismcalculator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -85,6 +86,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initListeners() {
         val group = groupOfNumbers
         val refIds = group.referencedIds
